@@ -1,10 +1,10 @@
-const hello = require('./hello-world');
+const helloWorld = require('./hello-world');
 
-describe(hello.helloWorld.name, () => {
+describe(helloWorld.name, () => {
   test('should print "HELLO WORLD"', () => {
     const holdsConsoleLog = console.log;
     console.log = jest.fn();
-    hello.helloWorld();
+    helloWorld();
     expect(console.log).toHaveBeenCalledWith('HELLO WORLD');
 
     console.log = holdsConsoleLog;

@@ -2,4 +2,4 @@ const helloWorld = () => {
   console.log('HELLO WORLD');
 };
 
-module.exports = { helloWorld, console };
+module.exports = helloWorld;
