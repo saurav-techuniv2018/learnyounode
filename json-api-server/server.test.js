@@ -13,7 +13,7 @@ describe('server', () => {
     });
   });
   describe('should return hour, minute and second', () => {
-    test('when a post request is made to /api/parsetime', (done) => {
+    test('when a get request is made to /api/parsetime', (done) => {
       const dateString = '2018-01-28T13:17:52.000Z';
 
       supertest(server)
