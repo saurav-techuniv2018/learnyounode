@@ -12,7 +12,8 @@ describe('server', () => {
           done();
         });
     });
-
+  });
+  describe('should return a 400 response', () => {
     test('when request is not a POST REQUEST', () => {
       supertest(server)
         .get('/')
