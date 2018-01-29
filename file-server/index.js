@@ -1,6 +1,5 @@
 const fileServer = require('./file-server');
 
-fileServer(
-  parseInt(process.argv[2], 10),
-  process.argv[3],
-);
+const server = fileServer(parseInt(process.argv[2], 10));
+
+server.listen(process.argv[3]);
