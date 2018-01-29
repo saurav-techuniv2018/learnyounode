@@ -14,12 +14,13 @@ describe('server', () => {
     });
   });
   describe('should return a 400 response', () => {
-    test('when request is not a POST REQUEST', () => {
+    test('when request is not a POST REQUEST', (done) => {
       supertest(server)
         .get('/')
         .send('get request')
         .end((error, response) => {
           expect(response.statusCode).toBe(400);
+          done();
         });
     });
   });
