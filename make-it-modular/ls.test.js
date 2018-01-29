@@ -1,9 +1,17 @@
 const ls = require('./ls');
 
 describe(ls.name, () => {
-  // Add test to check if the callback is called with an error
-
   describe('should call the callback', () => {
+    test('when error occurs (like invalid directory)', (done) => {
+      const path = 'invalid-dir';
+
+      const callback = (error) => {
+        expect(error.message).toEqual('ENOENT: no such file or directory, scandir \'invalid-dir\'');
+        done();
+      };
+
+      ls(path, 'txt', callback);
+    });
     test('when the directory is read', (done) => {
       const mockFunction = jest.fn(() => {
         expect(mockFunction.mock.calls.length).toBe(1);
